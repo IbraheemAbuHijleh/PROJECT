@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">CAR-RENTAL</string>
+    <string-array name="sippener">
+        <item>4</item>
+        <item>7</item>
+    </string-array>
+    <string-array name="LIST">
+        <item>Number of cars not rented</item>
+        <item>Number for all cars whose insurance expires today</item>
+    </string-array>
+</resources>
