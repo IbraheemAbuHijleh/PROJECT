@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="200dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="16dp"
+    app:cardCornerRadius="32dp"
+    app:cardElevation="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <TextView
+            android:id="@+id/carid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:visibility="invisible"/>
+        <TextView
+            android:id="@+id/carmodel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/card_iv"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/mer"
+            android:minWidth="300dp"
+            android:minHeight="200dp"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/car_bg"
+            android:layout_alignParentBottom="true">
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/viewBtn"
+                style="@style/viewBtn"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="130dp"
+                android:layout_marginEnd="16dp"/>
+
+
+            <TextView
+                android:id="@+id/carname"
+                android:text="Marcedes Benz"
+                style="@style/carCardViewBrandText"
+               android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                />
+            <TextView
+                android:id="@+id/location"
+                style="@style/carCardViewLocationText"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:text="Ramallah Branch"/>
+
+        </RelativeLayout>
+        <ImageView
+            android:id="@+id/fav_deal"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/emptyfav"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="16dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            app:cardCornerRadius="16dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:backgroundTint="@color/dark_purple"
+            android:layout_margin="16dp">
+            <TextView
+                android:id="@+id/price"
+                android:text="200$"
+                style="@style/CustomPriceTextViewStyle"
+               />
+
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+
+
+
+
+</androidx.cardview.widget.CardView>

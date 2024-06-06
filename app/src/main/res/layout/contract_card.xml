@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_margin="16dp"
+    
+    android:layout_height="210dp">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_grey"
+        android:orientation="vertical"
+        android:padding="8dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:background="@color/light_purple">
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/reservations"/>
+            <TextView
+
+                android:id="@+id/tvContractId"
+                style="@style/PlainBlackTextViewHeader"
+                android:text="Contract ID" />
+
+
+
+
+        </LinearLayout>
+
+
+
+
+        <TextView
+            android:id="@+id/tvCarId"
+            style="@style/cardInfoTextView"
+            android:text="Car ID" />
+
+        <TextView
+            android:id="@+id/tvStartDate"
+            style="@style/cardInfoTextView"
+            android:text="Start Date" />
+
+        <TextView
+            android:id="@+id/tvEndDate"
+            style="@style/cardInfoTextView"
+            android:text="End Date" />
+
+        <TextView
+            android:id="@+id/tvPrice"
+            style="@style/cardInfoTextView"
+            android:text="Price" />
+
+        <TextView
+            android:id="@+id/tvPaymentStatus"
+            style="@style/cardInfoTextView"
+            android:text="Payment Status" />
+
+        <TextView
+            android:id="@+id/tvVisaId"
+            style="@style/cardInfoTextView"
+            android:text="Visa ID" />
+    </LinearLayout>
+
+
+
+</androidx.cardview.widget.CardView>

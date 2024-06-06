@@ -18,4 +18,218 @@
         <item name="android:layout_gravity">center</item>
         <item name="android:layout_marginTop">20dp</item>
     </style>
+
+    <style name="ADDSTYLE">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_row">0</item>
+        <item name="android:layout_column">0</item>
+        <item name="android:layout_columnWeight">1</item>
+        <item name="android:layout_margin">20dp</item>
+        <item name="android:background">@color/Purple</item>
+        <item name="android:drawableTop">@android:drawable/ic_input_add</item>
+        <item name="android:drawablePadding">8dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">16dp</item>
+
+
+    </style>
+
+    <style name="viewBtn">
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_margin">-150dp</item>
+        <item name="android:background">@drawable/button_background</item>
+        <item name="android:text">View</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">16dp</item>
+    </style>
+    <style name="backImageView">
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:clickable">true</item>
+    </style>
+    <style name="bookBtn">
+        <item name="android:layout_width">260dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">25dp</item>
+        <item name="android:background">@drawable/book_button_background</item>
+        <item name="android:text">BookNow!</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">16dp</item>
+    </style>
+    <style name="CustomImageViewStyleBackground">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">200dp</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+    <style name="paymentBtn">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">15dp</item>
+        <item name="android:background">@drawable/book_button_background</item>
+        <item name="android:text">Choose payment method</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">12dp</item>
+    </style>
+    <style name="confirmBtn">
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_margin">66dp</item>
+        <item name="android:background">@drawable/book_button_background</item>
+        <item name="android:text">Confirm</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">12dp</item>
+    </style>
+    <style name="CustomCardViewStyle" parent="Widget.MaterialComponents.CardView">
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:backgroundTint">@color/dark_purple</item>
+        <item name="cardCornerRadius">16dp</item>
+    </style>
+    <style name="CustomPriceTextViewStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="CustomLocationTextViewStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+    <style name="CustomBrandTextViewStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+    <style name="PlainBlackTextViewHeader">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="ItalicBlackTextViewHeader">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">16dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+    <style name="ItalicBlackTextViewHeader2">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+    <style name="cardInfoTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+    <style name="carCardViewBrandText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginTop">140dp</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="carCardViewLocationText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginTop">170dp</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="smallHomeText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="HiUserTextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginTop">32dp</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="HomeSearchIconStyle">
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+    <style name="CustomProfileImageStyle">
+        <item name="android:layout_width">90dp</item>
+        <item name="android:layout_height">90dp</item>
+        <item name="android:src">@drawable/profile</item>
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:layout_marginStart">200dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:layout_marginBottom">16dp</item>
+    </style>
+    <style name="CustomTextInputEditTextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:drawableLeft">@drawable/palestine</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:hint">Phone Number</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:fontFamily">casual</item>
+    </style>
+    <style name="CustomPasswordTextInputStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:hint">Password</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:fontFamily">casual</item>
+        <item name="android:drawableStart">@drawable/baseline_lock_24</item>
+        <item name="android:drawableLeft">@drawable/baseline_lock_24</item>
+        <item name="android:drawablePadding">10dp</item>
+    </style>
+    <style name="colorButtonStyle">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:background">@color/black</item>
+        <item name="android:layout_marginStart">70dp</item>
+        <item name="android:layout_marginTop">390dp</item>
+    </style>
+    <style name="SignUpEditTextStyle">
+        <item name="android:layout_width">335dp</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:hint">Username</item>
+        <item name="android:inputType">textPersonName|textCapWords</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:textColorHint">@color/black</item>
+        <item name="android:textSize">15dp</item>
+    </style>
 </resources>

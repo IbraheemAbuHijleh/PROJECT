@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.car_rental.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_myreservationsandwishlist"
+        android:name="com.example.car_rental.ui.gallery.GalleryFragment"
+        android:label="My Reservations/Wishlist"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.example.car_rental.ui.gallery.GalleryFragment"
+        android:label="Reservations"
+        tools:layout="@layout/fragment_gallery" />
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.example.car_rental.ui.profile.ProfileFragment"
+        android:label="profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/nav_callus"
+        android:name="com.example.car_rental.ui.callus.CallUsFragment"
+        android:label="Call Us"
+        tools:layout="@layout/fragment_call_us" />
+    <fragment
+        android:id="@+id/nav_notifications"
+        android:name="com.example.car_rental.ui.notifications.NotificationsFragment"
+        android:label="Notifications"
+        tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/nav_ourpolicy"
+        android:name="com.example.car_rental.ui.ourpolicy.OurPolicyFragment"
+        android:label="Our Policy"
+        tools:layout="@layout/fragment_our_policy" />
+
+</navigation>

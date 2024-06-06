@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#B7ADCA"
+    android:backgroundTint="#D4CCE3"
+    android:orientation="vertical"
+    tools:context=".SignOut"
+    android:gravity="center">
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="144dp"
+        android:layout_height="103dp"
+        android:paddingTop="20dp"
+        android:src="@drawable/signupicon"
+        />
+
+    <EditText
+        android:id="@+id/editText_registerFirstName"
+        style="@style/SignUpEditTextStyle"
+        android:hint="Username"
+        android:inputType="textPersonName|textCapWords"
+        android:padding="10dp"
+        />
+
+    <EditText
+        android:id="@+id/editText_license"
+        style="@style/SignUpEditTextStyle"
+        android:layout_marginTop="15dp"
+        android:hint="License Number"
+        android:inputType="textPersonName|textCapWords"
+        android:padding="10dp"
+       />
+
+    <LinearLayout
+        android:layout_width="335dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageView_editCountryFlag"
+            android:layout_width="46dp"
+            android:layout_height="37dp"
+            android:src="@drawable/palestine"
+            />
+
+        <TextView
+            android:id="@+id/textView_editCountryCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+970"
+            android:textColor="#4A4646"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editText_editPhoneNumber"
+            style="@style/SignUpEditTextStyle"
+            android:hint="Phone Number"
+            />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/editText_registerPassword"
+        style="@style/SignUpEditTextStyle"
+        android:drawableStart="@drawable/baseline_lock_24"
+      android:layout_marginTop="10dp"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:padding="10dp"/>
+
+    <EditText
+        android:id="@+id/editText_registerConfirmPassword"
+        style="@style/SignUpEditTextStyle"
+        android:layout_marginTop="20dp"
+        android:hint="@string/confirm_password"
+        android:inputType="textPassword"
+       />
+
+    <Button
+        android:id="@+id/button_registerSignUp"
+        style="@style/bookBtn"
+        android:text="@string/sign_up"
+        />
+</LinearLayout>

@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context=".ui.home.HomeFragment">
+
+    <androidx.core.widget.NestedScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/my_primary"
+                android:alpha="0.7"/>
+
+            <ImageView
+                android:id="@+id/profileImage"
+                style="@style/CustomProfileImageStyle"
+                />
+            <TextView
+                android:id="@+id/usernameTV"
+                style="@style/HiUserTextView"
+                android:text="Hi User"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+
+                 />
+            </RelativeLayout>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                app:cardCornerRadius="28dp"
+
+                android:id="@+id/card_view"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="750dp"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/searchOnLocation"
+                        style="@style/smallHomeText"
+                        android:background="@android:color/transparent"
+                        android:onClick="searchOnLocation"
+                        android:text="@string/search_location_instead" />
+
+                    <LinearLayout
+                        android:id="@+id/linear"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/profileImage"
+                        android:layout_margin="16dp"
+                        android:orientation="horizontal">
+
+                        <SearchView
+                            android:id="@+id/searchView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/rounded_edittext"
+                            android:drawableStart="@drawable/baseline_search_24"
+                            android:elevation="10dp"
+                            android:iconifiedByDefault="false"
+                            android:queryHint="search for brand,model" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear_categories"
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"
+                        android:layout_below="@+id/linear"
+                        android:background="@drawable/rounded_edittext"
+                        android:elevation="10dp"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:id="@+id/sevenseatslayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:focusable="true"
+
+                            android:padding="16dp">
+
+                            <ImageView
+                                android:id="@+id/seveanseatsicon"
+                                style="@style/HomeSearchIconStyle"
+                                android:src="@drawable/sevenpasscar" />
+
+                            <TextView
+                                style="@style/smallHomeText"
+                                android:layout_below="@+id/seveanseatsicon"
+                                android:layout_alignStart="@+id/seveanseatsicon"
+                                android:layout_alignEnd="@+id/seveanseatsicon"
+                                android:text="7 Seat"
+
+                                />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/fiveseatslayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:padding="16dp">
+
+                            <ImageView
+                                android:id="@+id/fourseatsicon"
+                                style="@style/HomeSearchIconStyle"
+                                android:src="@drawable/fourseats" />
+
+                            <TextView
+                                style="@style/smallHomeText"
+                                android:layout_below="@+id/fourseatsicon"
+                                android:layout_alignStart="@+id/fourseatsicon"
+                                android:layout_alignEnd="@+id/fourseatsicon"
+                                android:text="5 Seat" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/twoseatslayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:padding="16dp">
+
+                            <ImageView
+                                android:id="@+id/twoseatsicon"
+                                style="@style/HomeSearchIconStyle"
+                                android:src="@drawable/twoseatscar" />
+
+                            <TextView
+                                style="@style/smallHomeText"
+                                android:layout_below="@+id/twoseatsicon"
+                                android:layout_alignStart="@+id/twoseatsicon"
+                                android:layout_alignEnd="@+id/twoseatsicon"
+                                android:text="2 Seat" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/filterlayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/rounded_edittext"
+                        android:elevation="10dp"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <RelativeLayout
+                            android:id="@+id/lowtohigh"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:focusable="true">
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/lowtohigh" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="30dp"
+                                android:text="price"
+                                android:textSize="18dp"
+
+                                />
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/pricehightolow"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:clickable="true"
+                            android:focusable="true">
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/hightolow" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="30dp"
+                                android:text="price"
+                                android:textSize="18dp"
+
+                                />
+
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/searchresultTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Sarch results:"
+                        android:textSize="24dp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/searchcarsRV"
+                        android:layout_width="match_parent"
+                        android:layout_height="400dp"
+                        android:layout_below="@id/linear"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginBottom="40dp"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/topDealsText"
+                        style="@style/PlainBlackTextViewHeader"
+                        android:layout_below="@+id/linear_categories"
+                        android:layout_marginTop="5dp"
+                        android:text="Top Deals" />
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/topdealsRV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/topDealsText"
+
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="16dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</RelativeLayout>

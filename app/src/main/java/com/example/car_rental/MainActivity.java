@@ -1,15 +1,13 @@
 package com.example.car_rental;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
- private ImageButton add;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -17,7 +15,10 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        add=findViewById(R.id.addcar);
+
+        Intent I=getIntent();
+
+
     }
 
     public void btncliack(View view) {
@@ -48,7 +49,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btnLogout(View view) {
-     finish();
+
+        Intent intent=new Intent(MainActivity.this, SignIn.class);
     }
 
     public void btnserche(View view) {

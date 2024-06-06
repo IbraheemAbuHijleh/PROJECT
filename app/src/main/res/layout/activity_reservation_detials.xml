@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".reservationform.ReservationDetials">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="205dp"
+        tools:layout_editor_absoluteY="16dp">
+
+        <ImageView
+            android:id="@+id/backArrow"
+            style="@style/backImageView"
+            android:src="@drawable/leftarrow" />
+
+        <ImageView
+            android:id="@+id/reservationimage"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/audi" />
+
+        <TextView
+            android:id="@+id/reservationinfo"
+            style="@style/PlainBlackTextViewHeader"
+            android:text="BMW/2022 Blue Ramallah"
+            />
+
+        <TextView
+            android:id="@+id/totalprice"
+            style="@style/ItalicBlackTextViewHeader2"
+
+            android:text="@string/total_price"
+             />
+
+        <TextView
+            android:id="@+id/availableFromDate"
+           style="@style/ItalicBlackTextViewHeader2"
+            android:text="@string/select_your_start_date"
+            />
+        <TextView
+            android:id="@+id/enddate"
+            style="@style/ItalicBlackTextViewHeader2"
+            android:text="@string/select_your_end_date"
+             />
+
+        <CalendarView
+            android:id="@+id/calendarView"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            style="@style/paymentBtn"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+
+            android:onClick="choosePaymentClick"
+            tools:layout_editor_absoluteY="692dp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

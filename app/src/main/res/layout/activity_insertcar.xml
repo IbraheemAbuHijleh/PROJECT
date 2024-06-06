@@ -3,22 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".Insertcar">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@drawable/ibraheem3"
         android:orientation="vertical"
-        android:padding="16dp"
-        tools:context=".Insertcar">
+        android:padding="16dp">
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="sans-serif-medium"
             android:text="Insert Car"
             android:textAlignment="center"
@@ -30,6 +30,7 @@
             style="@style/EditTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:hint="ID Number"
             android:textColor="#FFFFFF" />
 
@@ -38,54 +39,64 @@
             style="@style/EditTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:hint="Brand"
             android:inputType="text"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            android:visibility="gone" />
 
         <EditText
             android:id="@+id/edttext3"
             style="@style/EditTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:hint="Color"
             android:inputType="text"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            android:visibility="gone" />
 
         <EditText
             android:id="@+id/edttext4"
             style="@style/EditTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:hint="Model"
             android:inputType="text"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            android:visibility="gone" />
 
         <EditText
             android:id="@+id/edttext5"
             style="@style/EditTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:hint="Price"
             android:inputType="number"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            android:visibility="gone" />
 
         <EditText
             android:id="@+id/edttext6"
             style="@style/EditTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:hint="Location"
             android:inputType="text"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            android:visibility="gone" />
 
         <Spinner
             android:id="@+id/sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:background="#F4ECEC"
-            android:entries="@array/sippener" />
+            android:entries="@array/sippener"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/tvSelectedDate"
@@ -96,60 +107,61 @@
             android:fontFamily="sans-serif-medium"
             android:text="Insurance Expiry"
             android:textColor="#FFFFFF"
-            android:textSize="30dp" />
+            android:textSize="30dp"
+            android:visibility="gone" />
 
         <DatePicker
             android:id="@+id/cv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
             android:background="#EDE3E3"
-            android:datePickerMode="spinner" />
+            android:datePickerMode="spinner"
+            android:visibility="gone" />
 
         <RadioGroup
             android:id="@+id/radiogroub"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="#C3532E">
+            android:layout_marginTop="20dp"
+            android:background="#C3532E"
+            android:visibility="gone">
 
             <RadioButton
                 android:id="@+id/RV1"
                 style="@style/Radio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
+                android:layout_margin="10dp"
                 android:text="Available"
                 android:textColor="#FFFFFF"
-                android:textSize="30dp" />
+                android:textSize="20dp" />
 
             <RadioButton
                 android:id="@+id/RNV"
                 style="@style/Radio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
+                android:layout_margin="10dp"
                 android:text="Not Available"
                 android:textColor="#FFFFFF"
-                android:textSize="30dp" />
+                android:textSize="20dp" />
 
         </RadioGroup>
-
 
         <Button
             android:id="@+id/btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:backgroundTint="#1E74C1"
             android:onClick="clickbait"
             android:text="Add Car"
             android:textColor="#FFFFFF"
-            android:textSize="30dp" />
+            android:textSize="20dp"
+            android:visibility="gone" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

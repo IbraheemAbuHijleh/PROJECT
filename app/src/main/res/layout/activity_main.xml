@@ -1,240 +1,150 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ibraheem2"
     android:padding="16dp"
-    tools:context=".MainActivity">
+    android:background="@drawable/background_pattern">
 
     <TextView
-        android:id="@+id/app_title"
+        android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:background="#FFFFFF"
         android:text="Employee Page"
-        android:textColor="#000000"
-        android:textSize="48sp" />
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:textColor="#000000"/>
 
     <GridLayout
-        android:id="@+id/grid_layout"
+        android:id="@+id/gridLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/app_title"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="12dp"
+        android:layout_below="@id/tvTitle"
+        android:rowCount="4"
         android:columnCount="2"
-        android:useDefaultMargins="true">
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center">
 
-        <!-- Add Car Button -->
+        <Button
+            android:id="@+id/btnAddCar"
+            style="@style/ADDSTYLE"
+            android:layout_height="102dp"
+            android:onClick="btncliack"
+            android:text="Add Car" />
 
-        <!-- Search Button -->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="83dp"
+        <Button
+            android:id="@+id/btnSearch"
+            style="@style/ADDSTYLE"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_row="0"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="20dp"
+            android:background="@color/Purple"
+            android:drawableTop="@android:drawable/ic_search_category_default"
+            android:drawablePadding="8dp"
+            android:gravity="center"
+            android:onClick="btnserche"
+            android:paddingTop="16dp"
+            android:text="Search" />
+
+        <Button
+            android:id="@+id/btnRemoveCar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
             android:layout_column="0"
             android:layout_columnWeight="1"
-            android:background="#9E9E45"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:padding="8dp">
+            android:layout_margin="20dp"
+            android:background="@color/Purple"
+            android:text="Remove Car"
+            android:onClick="btndelete"
+            android:drawableTop="@android:drawable/ic_delete"
+            android:drawablePadding="8dp"
+            android:paddingTop="16dp"
+            android:gravity="center"/>
 
-            <ImageButton
-                android:id="@+id/addcar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:contentDescription="Add Car"
-                android:onClick="btncliack"
-                android:src="@android:drawable/ic_input_add" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Add Car"
-                android:textColor="#000000" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/btnUpdateCar"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_column="1"
             android:layout_columnWeight="1"
-            android:background="#FFFFFF"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:padding="8dp">
-            <ImageButton
-                android:id="@+id/btnSearch"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:onClick="btnserche"
-                android:contentDescription="Search"
-                android:src="@android:drawable/ic_search_category_default" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Search"
-                android:textColor="#000000" />
-        </LinearLayout>
+            android:layout_margin="20dp"
+            android:background="@color/Purple"
+            android:text="Update Car"
+            android:onClick="btnupdate"
+            android:drawableTop="@android:drawable/ic_menu_edit"
+            android:drawablePadding="8dp"
+            android:paddingTop="16dp"
+            android:gravity="center"/>
 
-        <!-- Remove Car Button -->
-        <LinearLayout
-            android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/btnDisplayCar"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_row="2"
+            android:layout_column="0"
             android:layout_columnWeight="1"
-            android:background="#FFFFFF"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:padding="8dp">
-            <ImageButton
-                android:id="@+id/btn_remove_car"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:onClick="btndelete"
-                android:contentDescription="Remove Car"
-                android:src="@android:drawable/ic_delete" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Remove Car"
-                android:textColor="#000000" />
-        </LinearLayout>
+            android:layout_margin="20dp"
+            android:background="@color/Purple"
+            android:text="Display Car"
+            android:onClick="btndisplay"
+            android:drawableTop="@android:drawable/ic_menu_view"
+            android:drawablePadding="8dp"
+            android:paddingTop="16dp"
+            android:gravity="center"/>
 
-        <!-- Update Car Button -->
-        <LinearLayout
-            android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/btnRentedCars"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_row="2"
+            android:layout_column="1"
             android:layout_columnWeight="1"
-            android:background="#984141"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:padding="8dp">
-            <ImageButton
-                android:id="@+id/btn_update_car"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:contentDescription="Update Car"
-                android:onClick="btnupdate"
-                android:src="@android:drawable/ic_menu_edit" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Update Car"
-                android:textColor="#000000" />
-        </LinearLayout>
+            android:layout_margin="20dp"
+            android:background="@color/Purple"
+            android:text="Rented Cars"
+            android:onClick="btnrented"
+            android:drawableTop="@android:drawable/ic_menu_agenda"
+            android:drawablePadding="8dp"
+            android:paddingTop="16dp"
+            android:gravity="center"/>
 
-        <!-- Display Car Button -->
-        <LinearLayout
-            android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/btnQueries"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_row="3"
+            android:layout_column="0"
             android:layout_columnWeight="1"
-            android:background="#8E1AA8"
+            android:layout_margin="20dp"
+            android:background="@color/Purple"
+            android:drawableTop="@android:drawable/ic_menu_help"
+            android:drawablePadding="8dp"
             android:gravity="center"
-            android:orientation="vertical"
-            android:padding="8dp">
-            <ImageButton
-                android:id="@+id/btn_display_car"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:contentDescription="Display Car"
-                android:onClick="btndisplay"
-                android:src="@android:drawable/ic_menu_view" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Display Car"
-                android:textColor="#000000" />
-        </LinearLayout>
+            android:onClick="btnQueries"
+            android:paddingTop="16dp"
+            android:text="Queries" />
 
-        <!-- Rented Cars Button -->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="0dp"
+            android:layout_height="98dp"
+            android:layout_row="3"
+            android:layout_column="1"
             android:layout_columnWeight="1"
-            android:background="#6ECF19"
+            android:layout_margin="20dp"
+            android:background="@color/Purple"
+            android:drawableTop="@android:drawable/ic_lock_power_off"
+            android:drawablePadding="8dp"
             android:gravity="center"
-            android:orientation="vertical"
-            android:padding="8dp">
-            <ImageButton
-                android:id="@+id/btn_rented_cars"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:contentDescription="Rented Cars"
-                android:src="@android:drawable/ic_menu_agenda" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Rented Cars"
-                android:textColor="#000000" />
-        </LinearLayout>
-
-        <!-- Queries Button -->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_columnWeight="1"
-            android:background="#AE1111"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:padding="8dp">
-            <ImageButton
-                android:id="@+id/btn_queries"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:contentDescription="Queries"
-                android:onClick="btnQueries"
-                android:src="@android:drawable/ic_menu_help" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Queries"
-                android:textColor="#000000" />
-        </LinearLayout>
-
-        <!-- Logout Button -->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="69dp"
-            android:layout_columnWeight="1"
-            android:background="#28CFBC"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:padding="8dp">
-
-            <ImageButton
-                android:id="@+id/btn_logout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:contentDescription="Logout"
-                android:onClick="btnLogout"
-                android:src="@android:drawable/ic_lock_power_off" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Logout"
-                android:textColor="#000000" />
-        </LinearLayout>
-
+            android:onClick="btnLogout"
+            android:paddingTop="16dp"
+            android:text="Logout" />
     </GridLayout>
 
 </RelativeLayout>

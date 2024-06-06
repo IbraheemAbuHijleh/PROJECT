@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
         android:allowBackup="true"
@@ -55,11 +56,68 @@
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="com.example.car_rental.MainActivity" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Location.LocationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".reservationform.PaymentDetails"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.example.car_rental.reservationform.PaymentDetails" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".reservationform.ReservationDetials"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.example.car_rental.reservationform.ReservationDetials" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SignOut"
+            android:exported="false" />
+        <activity
+            android:name=".SignIn"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.car_rental.SignIn" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".IntroActivity"
+            android:exported="true">
+        <intent-filter>
+
+            <action android:name="android.intent.action.MAIN"/>
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+        <activity
+            android:name=".CarDetails"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.example.car_rental.CarDetailsActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivityForUser"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.CarRentalSystem.NoActionBar" />
     </application>
 
 </manifest>

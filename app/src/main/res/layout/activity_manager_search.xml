@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -8,7 +7,6 @@
     android:background="@drawable/back5"
     tools:context=".ManagerSearch">
 
-    <!-- EditText for search query -->
     <EditText
         android:id="@+id/search"
         android:layout_width="0dp"
@@ -17,11 +15,12 @@
         android:layout_marginTop="50dp"
         android:layout_marginEnd="40dp"
         android:hint="Search query"
+        android:gravity="center"
+        android:drawableStart="@drawable/image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <!-- Spinner for search options -->
     <Spinner
         android:id="@+id/spinner_search"
         android:layout_width="0dp"
@@ -33,7 +32,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/search"/>
 
-    <!-- Button to initiate search -->
     <Button
         android:id="@+id/searchButton"
         android:layout_width="wrap_content"
@@ -44,7 +42,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/spinner_search"/>
 
-    <!-- ListView to display search results -->
     <ListView
         android:id="@+id/listView"
         android:layout_width="0dp"
@@ -59,3 +56,4 @@
         app:layout_constraintTop_toBottomOf="@id/searchButton"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+

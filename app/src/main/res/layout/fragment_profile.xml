@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.profile.ProfileFragment">
+
+    <ScrollView
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#D0C3E8"
+        tools:context=".Profile">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:padding="20dp"
+                android:background="#AD9FC1">
+
+                <ImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/profile_image" />
+
+                <TextView
+                    android:id="@+id/full_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/profile_image"
+                    android:fontFamily="casual"
+                    android:text="Yuna Nawahdah"
+                    android:textSize="20sp"
+                    android:includeFontPadding="false" />
+
+                <TextView
+                    android:id="@+id/license"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/profile_image"
+                    android:fontFamily="casual"
+                    android:text="yuna@gmail.com"
+                    android:textSize="14sp"
+                    android:layout_below="@id/full_name"
+                    android:includeFontPadding="false" />
+
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:layout_marginTop="-100dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="125dp"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    app:cardBackgroundColor="#614051"
+                    app:cardMaxElevation="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#BBAED1"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/payment"
+                            android:layout_centerHorizontal="true" />
+
+                        <TextView
+                            android:id="@+id/payment_lbl"
+                            style="@style/smallHomeText"
+                            android:text="$"
+                            android:layout_centerInParent="true" />
+
+                        <TextView
+                            android:id="@+id/payment_desc"
+                            style="@style/smallHomeText"
+                            android:layout_below="@id/payment_lbl"
+                            android:layout_centerHorizontal="true"
+                            android:text="@string/balance"
+                            />
+
+                    </RelativeLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="125dp"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    app:cardBackgroundColor="#AD9FC1"
+                    app:cardMaxElevation="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#BBAED1"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/booking"
+                            android:layout_centerHorizontal="true" />
+
+                        <TextView
+                            android:id="@+id/booking_lbl"
+                            android:text="0"
+                            style="@style/smallHomeText"
+                            android:layout_centerInParent="true" />
+
+                        <TextView
+                            android:id="@+id/booking_desc"
+                            style="@style/smallHomeText"
+                            android:layout_below="@id/booking_lbl"
+                            android:layout_centerHorizontal="true"
+                            android:text="@string/booking"
+                           />
+
+                    </RelativeLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editText_password"
+                        style="@style/CustomPasswordTextInputStyle"  />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"/>
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editText_phone"
+                    style="@style/CustomTextInputEditTextStyle" />
+
+
+
+                <Button
+                    android:id="@+id/btn"
+                    style="@style/bookBtn"
+
+                    android:text="Edit" />
+                <TextView
+                    android:id="@+id/signout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/profile_image"
+                    android:fontFamily="casual"
+                    android:text="Sign out"
+                    android:textSize="20sp"
+                    android:clickable="true"
+                    android:includeFontPadding="false" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>
