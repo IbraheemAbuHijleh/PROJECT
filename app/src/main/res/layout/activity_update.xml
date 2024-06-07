@@ -4,51 +4,58 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-<androidx.appcompat.widget.LinearLayoutCompat
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".UPDATE">
+    tools:context=".UPDATE"
+    android:background="#D0C3E8">
 
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:text="UPDATE CAR"
-        android:textSize="30dp" />
-
-    <EditText
-        android:id="@+id/edttextt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:background="#FFFFFF"
-        android:ems="10"
-        android:hint="CAR ID "
-        android:inputType="text"
-        android:textColorHint="#6200EA" />
-
-    <Button
-        android:id="@+id/btncli"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:text="Click"
-        android:textSize="30dp" />
-
-    <ListView
-        android:id="@+id/list"
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp" />
+        android:orientation="vertical"
+        android:layout_margin="20dp">
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="UPDATE CAR"
+            android:textSize="30sp"
+            android:textColor="#534E5C"
+            android:fontFamily="sans-serif-medium"/>
+
+        <EditText
+            android:id="@+id/edttextt"
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:ems="10"
+            android:hint="CAR ID"
+            android:inputType="text"/>
+
+        <Button
+            android:id="@+id/btncli"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:text="Click"
+            android:textSize="20sp"/>
+
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:divider="@android:color/transparent"
+            android:background="@drawable/list_item_border"
+            android:visibility="gone"
+            android:dividerHeight="10dp"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 </ScrollView>

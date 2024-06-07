@@ -89,6 +89,8 @@ public class UPDATE extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
 
+                    list.setVisibility(View.VISIBLE);
+
                     String CARIDD = edttext.getText().toString();
 
                     String URL = "http://10.0.2.2:80/CARRENTAL/GetCarId.php?carid=" + CARIDD;

@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Insertcar">
+    tools:context=".Insertcar"
+    android:background="#D0C3E8"
+    >
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/ibraheem3"
+        android:background="#AD9FC1"
         android:orientation="vertical"
         android:padding="16dp">
 
@@ -32,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:hint="ID Number"
-            android:textColor="#FFFFFF" />
+            android:textColor="#534E5C" />
 
         <EditText
             android:id="@+id/edttext2"
@@ -125,7 +127,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:background="#C3532E"
+            android:background="#ddceeb"
             android:visibility="gone">
 
             <RadioButton
@@ -135,7 +137,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="Available"
-                android:textColor="#FFFFFF"
+                android:textColor="#534E5C"
                 android:textSize="20dp" />
 
             <RadioButton
@@ -145,7 +147,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="Not Available"
-                android:textColor="#FFFFFF"
+                android:textColor="#534E5C"
                 android:textSize="20dp" />
 
         </RadioGroup>
@@ -156,7 +158,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
-            android:backgroundTint="#1E74C1"
+            android:backgroundTint="#a981e5"
             android:onClick="clickbait"
             android:text="Add Car"
             android:textColor="#FFFFFF"
