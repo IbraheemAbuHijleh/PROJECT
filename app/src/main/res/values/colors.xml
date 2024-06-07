@@ -9,4 +9,10 @@
     <color name="light_purple">#AD9FC1</color>
     <color name="my_primary">#5E35B1</color>
     <color name="my_secondary">#673AB7</color>
+    <color name="report_background">#F0F0F0</color>
+    <color name="title_color">#333333</color>
+    <color name="date_color">#666666</color>
+    <color name="table_header_color">#FFFFFF</color>
+    <color name="table_row_color">#333333</color>
+    <color name="total_sales_color">#009688</color>
 </resources>

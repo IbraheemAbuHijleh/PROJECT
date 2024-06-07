@@ -5,36 +5,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#AD9FC1"
     android:orientation="vertical"
     tools:context=".List">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:text="List All Car"
+            android:textSize="40sp" />
+
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="598dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp" />
+
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="30dp"
-                android:text="List All Car"
-                android:textSize="40sp" />
-
-            <ListView
-                android:id="@+id/list"
-                android:layout_width="406dp"
-                android:layout_height="731dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="30dp" />
-
-        </LinearLayout>
     </ScrollView>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

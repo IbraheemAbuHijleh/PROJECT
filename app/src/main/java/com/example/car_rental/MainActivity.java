@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
     public void btnLogout(View view) {
 
         Intent intent=new Intent(MainActivity.this, SignIn.class);
+        startActivity(intent);
     }
 
     public void btnserche(View view) {

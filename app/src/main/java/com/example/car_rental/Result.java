@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,6 +17,7 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -22,9 +25,10 @@ import java.util.ArrayList;
 
 public class Result extends AppCompatActivity {
 
-    private TextView txtRes;
+
 
     private RequestQueue RE;
+ private ListView list;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -32,32 +36,41 @@ public class Result extends AppCompatActivity {
 
         setContentView(R.layout.activity_result);
 
-        txtRes=findViewById(R.id.txtres);
+        list=findViewById(R.id.list);
 
-        RE= Volley.newRequestQueue(this);
+        RE = Volley.newRequestQueue(this);
+        String URL = "http://10.0.2.2:80/CARRENTAL/ALLCARINC.php";
 
-
-        String URL = "http://10.0.2.2:80/CARRENTAL/NumberCarAvailable.php";
-
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL,
-                new Response.Listener<String>() {
+        JsonArrayRequest R = new JsonArrayRequest(Request.Method.GET, URL, null,
+                new Response.Listener<JSONArray>() {
                     @Override
-                    public void onResponse(String response) {
-                        Log.d("Response", response);
+                    public void onResponse(JSONArray response) {
+                        if (response != null && response.length() > 0) {
+                            ArrayList<Car> list1 = new ArrayList<>();
+                            try {
+                                for (int i = 0; i < response.length(); i++) {
+                                    JSONObject o = response.getJSONObject(i);
+                                    list1.add(new Car(
+                                            o.getString("carid"),
+                                            o.getString("brand"),
+                                            o.getString("color"),
+                                            o.getString("MODEL"),
+                                            o.getString("PRICE"),
+                                            o.getString("SEAT"),
+                                            o.getString("STATUS"),
+                                            o.getString("DATA"),
+                                            o.getString("chapterlocation")
+                                    ));
+                                }
+                               // Car[] arr = list1.toArray(new Car[0]);
+                                ArrayAdapter<Car> adapter = new ArrayAdapter<>(Result.this, android.R.layout.simple_list_item_1, list1);
+                                list.setAdapter(adapter);
+                            } catch (JSONException e) {
+                                e.printStackTrace();
 
-                        try {
-                            JSONObject o = new JSONObject(response);
-
-                            if (o.has("message")) {
-                                String message = o.getString("message");
-                                Toast.makeText(Result.this, message, Toast.LENGTH_SHORT).show();
-                                txtRes.setText(message);
-                            } else {
-                                Toast.makeText(Result.this, "Key 'message' not found in response", Toast.LENGTH_SHORT).show();
                             }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                            Toast.makeText(Result.this, "Response parsing error", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(Result.this, "No data found", Toast.LENGTH_SHORT).show();
                         }
                     }
                 },
@@ -65,14 +78,15 @@ public class Result extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Log.e("Volley", "Error: " + error.toString());
-                        Toast.makeText(Result.this, "Request error", Toast.LENGTH_SHORT).show();
                     }
-                });
+                }
+        );
 
-        // Add the request to the RequestQueue
-        RE.add(stringRequest);
+        RE.add(R);
     }
 }
+
+
 
 
 

@@ -4,15 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#AD9FC1"
     tools:context=".Result"
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/txtres"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="200dp"
-        android:textColorHighlight="#DA1515"
-        android:textSize="40dp" />
+        android:text="List of Cars"
+        android:textSize="20sp"
+        android:padding="16dp"
+        android:textColor="@android:color/black"
+        android:gravity="center" />
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#F4EFEF"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp" />
+
 </androidx.appcompat.widget.LinearLayoutCompat>
+

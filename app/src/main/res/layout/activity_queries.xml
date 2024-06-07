@@ -1,31 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    tools:context=".Queries">
+    android:layout_height="match_parent"
+    android:background="@color/report_background">
 
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:background="#9E2626"
-        android:text="Queries"
-        android:textSize="50dp"
-        tools:layout_editor_absoluteX="158dp"
-        tools:layout_editor_absoluteY="52dp" />
-
-    <ListView
-        android:id="@+id/list"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:entries="@array/LIST"/>
+        android:layout_height="wrap_content"
+        android:background="@color/Purple"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+        <!-- Table for Monthly and Yearly Profits -->
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/table_background"
+            android:stretchColumns="1">
+
+            <!-- Header Row -->
+            <TableRow>
+
+                <TextView
+                    android:padding="8dp"
+                    android:text="Item"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:padding="8dp"
+                    android:text="Data"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <!-- Data Rows -->
+            <TableRow>
+                <TextView
+                    android:padding="8dp"
+                    android:textColor="@color/table_row_color"
+                    android:text="# Available Car" />
+                <TextView
+                    android:id="@+id/avcar"
+                    android:padding="8dp"
+                    android:textColor="@color/table_row_color"
+                    android:text="0" />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:padding="8dp"
+                    android:textColor="@color/table_row_color"
+                    android:text=" # Not Availble Car" />
+                <TextView
+                    android:id="@+id/nvc"
+                    android:padding="8dp"
+                    android:textColor="@color/table_row_color"
+                    android:text="0" />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:padding="8dp"
+                    android:textColor="@color/table_row_color"
+                    android:text="Profit" />
+                <TextView
+                    android:id="@+id/Profit"
+                    android:padding="8dp"
+                    android:textColor="@color/table_row_color"
+                    android:text="0" />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:padding="8dp"
+                    android:textColor="@color/table_row_color"
+                    android:text="# Car insurance expires" />
+                <TextView
+                    android:id="@+id/NIC"
+                    android:padding="8dp"
+                    android:textColor="@color/table_row_color"
+                    android:text="0" />
+            </TableRow>
+
+        </TableLayout>
+
+        <!-- Image for Chart -->
+        <ImageView
+            android:id="@+id/chart_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="Sales Chart"
+            android:scaleType="fitCenter"
+            android:src="@drawable/sample_charts" />
+
+        <!-- Buttons Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/calculate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="calculateProfit"
+                android:text="Car insurance expires"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
