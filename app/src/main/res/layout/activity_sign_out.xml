@@ -1,89 +1,180 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:background="#B7ADCA"
-    android:backgroundTint="#D4CCE3"
-    android:orientation="vertical"
-    tools:context=".SignOut"
-    android:gravity="center">
+    android:background="@drawable/bg"
+    tools:context=".SignOut">
 
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="144dp"
-        android:layout_height="103dp"
-        android:paddingTop="20dp"
-        android:src="@drawable/signupicon"
-        />
-
-    <EditText
-        android:id="@+id/editText_registerFirstName"
-        style="@style/SignUpEditTextStyle"
-        android:hint="Username"
-        android:inputType="textPersonName|textCapWords"
-        android:padding="10dp"
-        />
-
-    <EditText
-        android:id="@+id/editText_license"
-        style="@style/SignUpEditTextStyle"
-        android:layout_marginTop="15dp"
-        android:hint="License Number"
-        android:inputType="textPersonName|textCapWords"
-        android:padding="10dp"
-       />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/my_primary"
+        android:alpha="0.7"/>
 
     <LinearLayout
-        android:layout_width="335dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="15dp"
-        android:background="@color/white"
-        android:orientation="horizontal">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_above="@id/card_view"
+        android:padding="28dp">
 
         <ImageView
-            android:id="@+id/imageView_editCountryFlag"
-            android:layout_width="46dp"
-            android:layout_height="37dp"
-            android:src="@drawable/palestine"
-            />
-
-        <TextView
-            android:id="@+id/textView_editCountryCode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="+970"
-            android:textColor="#4A4646"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:src="@drawable/signupicon"/>
 
-        <EditText
-            android:id="@+id/editText_editPhoneNumber"
-            style="@style/SignUpEditTextStyle"
-            android:hint="Phone Number"
-            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Join RYDI"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="32sp"
+            android:textColor="@color/white"/>
     </LinearLayout>
 
-    <EditText
-        android:id="@+id/editText_registerPassword"
-        style="@style/SignUpEditTextStyle"
-        android:drawableStart="@drawable/baseline_lock_24"
-      android:layout_marginTop="10dp"
-        android:hint="@string/password"
-        android:inputType="textPassword"
-        android:padding="10dp"/>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:cardCornerRadius="28dp"
+        android:layout_marginBottom="-20dp"
+        android:id="@+id/card_view">
 
-    <EditText
-        android:id="@+id/editText_registerConfirmPassword"
-        style="@style/SignUpEditTextStyle"
-        android:layout_marginTop="20dp"
-        android:hint="@string/confirm_password"
-        android:inputType="textPassword"
-       />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="28dp">
 
-    <Button
-        android:id="@+id/button_registerSignUp"
-        style="@style/bookBtn"
-        android:text="@string/sign_up"
-        />
-</LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sign Up"
+                android:textColor="@color/my_primary"
+                android:textSize="32sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Create a new account"
+                android:alpha="0.7"/>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"/>
+
+            <EditText
+                android:id="@+id/editText_registerFirstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Username"
+                android:inputType="textPersonName|textCapWords"
+                android:padding="10dp"
+                android:background="@drawable/edit_text_bottom_border"/>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"/>
+
+            <EditText
+                android:id="@+id/editText_license"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="License Number"
+                android:inputType="textPersonName|textCapWords"
+                android:padding="10dp"
+                android:background="@drawable/edit_text_bottom_border"/>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:background="@drawable/edit_text_bottom_border">
+
+                <ImageView
+                    android:id="@+id/imageView_editCountryFlag"
+                    android:layout_width="46dp"
+                    android:layout_height="37dp"
+                    android:src="@drawable/palestine"/>
+
+                <TextView
+                    android:id="@+id/textView_editCountryCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+970"
+                    android:textColor="#4A4646"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_vertical"/>
+
+                <EditText
+                    android:id="@+id/editText_editPhoneNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Phone Number"
+                    android:padding="10dp"
+                    />
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"/>
+
+            <EditText
+                android:id="@+id/editText_registerPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                android:background="@drawable/edit_text_bottom_border"/>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"/>
+
+            <EditText
+                android:id="@+id/editText_registerConfirmPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Confirm Password"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                android:background="@drawable/edit_text_bottom_border"/>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button_registerSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                style="@style/bookBtn"
+                android:text="Sign Up"
+                app:cornerRadius="32dp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Already have an account?"
+                android:clickable="true"
+                android:onClick="goToSignIn"
+                android:layout_gravity="center"
+                android:alpha="0.7"
+                android:layout_marginBottom="10dp"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

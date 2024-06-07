@@ -107,4 +107,10 @@ public class SignOut extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
 
+
+    public void goToSignIn(View view){
+        Intent intent =new Intent(SignOut.this,SignIn.class);
+        startActivity(intent);
+    }
+
 }
