@@ -69,4 +69,10 @@ public class MainActivity extends AppCompatActivity {
 
         startActivity(intent);
     }
+
+    public void btnrented(View view){
+        Intent intent=new Intent(MainActivity.this,ManagerApproved.class);
+
+        startActivity(intent);
+    }
 }

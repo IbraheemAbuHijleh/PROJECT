@@ -32,6 +32,12 @@
             android:name=".ManagerSearch"
             android:exported="false" />
         <activity
+            android:name=".ManagerApproved"
+            android:exported="false" />
+        <activity
+            android:name=".ManagerDetailsApprover"
+            android:exported="false" />
+        <activity
             android:name=".Result1"
             android:exported="false" />
         <activity
