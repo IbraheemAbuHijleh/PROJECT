@@ -44,7 +44,18 @@ public class Car {
         this.statusNumber = statusNumber;
         this.status = status;
     }
-
+    public Car(String carID, String brand, String color, String model, String price, String statusNumber, String date , String location ) {
+        this.carID = carID;
+        this.brand = brand;
+        this.color = color;
+        this.model = model;
+        this.price = price;
+        this.statusNumber = statusNumber;
+        this.status = status;
+        this.statusNumber=statusNumber;
+        this.insurance_expires=date;
+        this.chapterlocation=location;
+    }
     public String getCarID() {
         return carID;
     }

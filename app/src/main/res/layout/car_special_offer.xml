@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,16 +7,14 @@
     android:gravity="center"
     android:orientation="vertical"
     android:padding="5dp"
-    android:background="#AD9FC1"
-
-    >
+    android:background="#AD9FC1">
 
     <LinearLayout
+        android:id="@+id/carDetailsLayout"
         android:layout_width="wrap_content"
         android:layout_height="142dp"
         android:gravity="center_horizontal"
         android:background="@color/white">
-
 
         <LinearLayout
             android:layout_width="174dp"
@@ -31,18 +30,11 @@
                 android:elegantTextHeight="true"
                 android:gravity="center|right"
                 android:text="20%"
-
                 android:textColor="#000000"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/textView_oldPrice"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Price:"
-                android:textColor="#393636" />
+
 
             <TextView
                 android:id="@+id/text_newPrice"
@@ -54,14 +46,7 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/textV2"
-                android:layout_width="match_parent"
-                android:layout_height="26dp"
-                android:gravity="bottom|center_horizontal"
-                android:text="Hurry! Offer valid only until"
-                android:textColor="#191818"
-                android:textSize="12sp" />
+
 
             <TextView
                 android:id="@+id/textView_endDate"
@@ -80,7 +65,7 @@
             android:layout_weight="2"
             android:background="?attr/selectableItemBackgroundBorderless"
             app:srcCompat="@drawable/car1"
-            android:layout_margin="10dp"/>
+            android:layout_margin="10dp" />
 
         <ImageButton
             android:id="@+id/imgFavView"
@@ -88,13 +73,14 @@
             android:layout_height="78dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:backgroundTint="#E7E2E2"
-            app:srcCompat="@drawable/ic_favorite_shadow_24dp" />
+            app:srcCompat="@drawable/ic_favorite_shadow_24dp"
+            android:onClick="heart"
+            />
 
         <Space
             android:layout_width="46dp"
             android:layout_height="23dp"
             android:layout_weight="2" />
-
     </LinearLayout>
 
     <TextView
@@ -118,6 +104,4 @@
     <Space
         android:layout_width="432dp"
         android:layout_height="14dp" />
-
-
 </LinearLayout>

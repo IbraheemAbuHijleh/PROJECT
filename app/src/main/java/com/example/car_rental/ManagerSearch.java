@@ -33,8 +33,17 @@ public class ManagerSearch extends AppCompatActivity {
     private EditText search_query;
     private ListView list;
 
+    private static final String SELECTED_ITEM_KEY = "selectedItem";
+    private static final String CAR_LIST_KEY = "carList";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if (savedInstanceState != null) {
+            int selectedItemPosition = savedInstanceState.getInt(SELECTED_ITEM_KEY);
+            spinner_option.setSelection(selectedItemPosition);
+            String searchQueryText = savedInstanceState.getString("searchQuery");
+            search_query.setText(searchQueryText);
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manager_search);
         search_button = findViewById(R.id.searchButton);
@@ -123,8 +132,10 @@ public class ManagerSearch extends AppCompatActivity {
                                 String model = obj.getString("MODEL");
                                 String price = obj.getString("PRICE");
                                 String status = obj.getString("STATUS");
-
-                                Car car = new Car(carID, brand, color, model, price, status, ""); // Adjust as per your constructor
+                                String seat = obj.getString("SEAT");
+                                String date = obj.getString("DATA");
+                                String location = obj.getString("chapterlocation");
+                                Car car = new Car(carID, brand, color, model, price, seat,date,location); // Adjust as per your constructor
                                 cars.add(car);
                             }
                             CarAdapter adapter = new CarAdapter(ManagerSearch.this, cars);
@@ -143,5 +154,12 @@ public class ManagerSearch extends AppCompatActivity {
         });
 
         queue.add(request);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt(SELECTED_ITEM_KEY, spinner_option.getSelectedItemPosition());
+        outState.putString("searchQuery", search_query.getText().toString());
     }
 }

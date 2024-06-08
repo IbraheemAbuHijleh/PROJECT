@@ -1,5 +1,28 @@
 package com.example.car_rental;
 
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+import androidx.appcompat.app.AppCompatActivity;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import org.json.JSONException;
+import org.json.JSONObject;
+import java.util.HashMap;
+import java.util.Map;
+import android.app.ProgressDialog;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -62,7 +85,23 @@ public class SignOut extends AppCompatActivity {
             }
         });
     }
-
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("firstName", firstNameEditText.getText().toString());
+        outState.putString("license", licenseEditText.getText().toString());
+        outState.putString("phone", phoneEditText.getText().toString());
+        outState.putString("password", passwordEditText.getText().toString());
+        outState.putString("confirmPassword", confirmPasswordEditText.getText().toString());
+    }
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        firstNameEditText.setText(savedInstanceState.getString("firstName"));
+        licenseEditText.setText(savedInstanceState.getString("license"));
+        phoneEditText.setText(savedInstanceState.getString("phone"));
+        passwordEditText.setText(savedInstanceState.getString("password"));
+        confirmPasswordEditText.setText(savedInstanceState.getString("confirmPassword"));
+    }
     private void signUp(String firstName, String license, String phone, String password) {
         String url = "http://10.0.2.2:80/rest/signup.php";
         RequestQueue requestQueue = Volley.newRequestQueue(this);

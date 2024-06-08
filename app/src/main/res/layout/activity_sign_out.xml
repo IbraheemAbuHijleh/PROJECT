@@ -163,6 +163,7 @@
                 android:layout_height="60dp"
                 style="@style/bookBtn"
                 android:text="Sign Up"
+                android:onClick="ToSign"
                 app:cornerRadius="32dp"/>
 
 

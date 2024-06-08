@@ -47,4 +47,25 @@
     <string name="sign_up">Sign up</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="password">Password</string>
+    <string name="appname">indivisual_work</string>
+    <string name="car_id">"car id : "</string>
+    <string name="approve_to_rent_a_acr_to_the_costumer">approve to rent a acr to the costumer</string>
+    <string name="contract_id">Contract ID</string>
+    <string name="username">Username</string>
+    <string name="d">Car ID</string>
+    <string name="start_date">Start Date</string>
+    <string name="end_date">End Date</string>
+    <string name="price">Price</string>
+    <string name="status">Status</string>
+    <string name="visa_id">Visa ID</string>
+    <string name="number_of_days_to_booking">Number of Days to Booking</string>
+    <string name="approv_request">Approv request</string>
+    <string name="dis_approved">dis Approved</string>
+    <string name="car_details">Car Details</string>
+    <string name="search_query">Search query</string>
+    <string name="model">Model</string>
+    <string name="color1">Color</string>
+    <string name="brand">Brand</string>
+    <string name="car_idd">Car ID</string>
+    <string name="pricee">Price</string>
 </resources>

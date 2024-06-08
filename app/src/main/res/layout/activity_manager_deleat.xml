@@ -1,50 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     android:background="#AD9FC1"
     tools:context=".ManagerDeleat">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="40dp"
-        android:background="#FFFFFF"
-        android:paddingLeft="10dp"
-        android:paddingTop="15dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="15dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-        android:text="Select a car to delete it"
-        android:textColor="#530B60"
-        android:textSize="24sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toTopOf="@id/listView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.738"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.39"
-        app:layout_constraintVertical_chainStyle="packed" />
+        <TextView
+            android:id="@+id/textView"
+            style="@style/CustomTextViewStyle"
+            app:layout_constraintBottom_toTopOf="@id/listView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.663"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.39"
+            app:layout_constraintVertical_chainStyle="packed" />
 
-    <ListView
-        android:id="@+id/listView"
-        android:layout_width="305dp"
-        android:layout_height="497dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="40dp"
-        android:cacheColorHint="#FAFAFA"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.75"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView" />
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="305dp"
+            android:layout_height="497dp"
+            android:layout_marginTop="40dp"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            android:background="@drawable/list_item_border"
 
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

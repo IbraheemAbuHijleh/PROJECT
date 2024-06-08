@@ -21,6 +21,10 @@ public class CarAdapter extends ArrayAdapter<Car> {
         TextView tvColor;
         TextView tvModel;
         TextView tvPrice;
+
+        TextView tvSeatnumber;
+        TextView tvDate;
+        TextView tvLocation;
     }
 
     @Override
@@ -33,7 +37,9 @@ public class CarAdapter extends ArrayAdapter<Car> {
         if (convertView == null) {
             viewHolder = new ViewHolder();
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.car_item, parent, false);
-
+            viewHolder.tvSeatnumber=convertView.findViewById(R.id.tv_seatnumber);
+            viewHolder.tvDate=convertView.findViewById(R.id.tv_date);
+            viewHolder.tvLocation=convertView.findViewById(R.id.tv_location);
             // Lookup view for data population and store in viewHolder
             viewHolder.tvCarID = convertView.findViewById(R.id.tv_car_id);
             viewHolder.tvBrand = convertView.findViewById(R.id.tv_brand);
@@ -47,7 +53,9 @@ public class CarAdapter extends ArrayAdapter<Car> {
             // Reuse the viewHolder object from the cache
             viewHolder = (ViewHolder) convertView.getTag();
         }
-
+        viewHolder.tvColor.setText("Seat number: " + car.getStatusNumber());
+        viewHolder.tvModel.setText("Date: " + car.getInsurance_expires());
+        viewHolder.tvPrice.setText("Location: " + car.getChapterlocation());
         // Populate the data from the data object via the viewHolder object
         viewHolder.tvCarID.setText("ID: " + car.getCarID());
         viewHolder.tvBrand.setText("Brand: " + car.getBrand());
@@ -55,7 +63,8 @@ public class CarAdapter extends ArrayAdapter<Car> {
         viewHolder.tvModel.setText("Model: " + car.getModel());
         viewHolder.tvPrice.setText("Price: " + car.getPrice());
 
-        // Return the completed view to render on screen
+
+
         return convertView;
     }
 }

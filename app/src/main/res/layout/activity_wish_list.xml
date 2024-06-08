@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WishListActivity"
+    android:layout_margin="20dp"
+    android:background="#AD9FC1"
+    >
+
+    <ListView
+        android:id="@+id/wish_list_view"
+        android:background="@drawable/list_item_border"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        />
+
+</RelativeLayout>

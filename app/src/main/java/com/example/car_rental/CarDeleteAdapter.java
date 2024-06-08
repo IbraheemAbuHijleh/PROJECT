@@ -39,16 +39,16 @@ public class CarDeleteAdapter extends ArrayAdapter<Car> {
         TextView carDetails = convertView.findViewById(R.id.carDetails);
         Button deleteButton = convertView.findViewById(R.id.deleteButton);
 
-        carDetails.setText("car id : " + car.getCarID()+ " \n" +
-                "car brand "+  car.getBrand() + " \n"+
-                "car model :" + car.getModel()+" \n" +
-                "color : "+ car.getColor() +"\n"+
-                "price per day "+ car.getPrice() +"\n" +
-
-                "car status : "+car.getStatus()+"\n"+
-                "car location : "+ car.getChapterlocation()+ "\n"+
-                "expire date" + car.getChapterlocation()
+        carDetails.setText("car id : " + car.getCarID() + " \n" +
+                "car brand: " + car.getBrand() + " \n" +
+                "car model: " + car.getModel() + " \n" +
+                "color: " + car.getColor() + "\n" +
+                "price per day: " + car.getPrice() + "\n" +
+                "car status: " + car.getStatus() + "\n" +
+                "car location: " + car.getChapterlocation() + "\n" +
+                "expire date: " + car.getInsurance_expires()
         );
+
 
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
