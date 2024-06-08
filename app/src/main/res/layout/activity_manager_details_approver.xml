@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#AD9FC1"
+    android:padding="16dp">
+
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="287dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+
+        android:layout_marginTop="10dp"
+
+        android:layout_marginBottom="25dp"
+        android:fontFamily="casual"
+        android:gravity="center_horizontal"
+
+        android:padding="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="approve to rent a acr to the costumer"
+
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="11dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/contractIdView"
+            android:layout_width="159dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+
+            android:layout_marginBottom="11dp"
+            android:background="@color/white"
+            android:gravity="center_horizontal"
+
+            android:padding="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="15dp"
+            android:text="Contract ID"
+
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/usernameView"
+            android:layout_width="159dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="15dp"
+
+            android:layout_marginBottom="11dp"
+            android:background="@color/white"
+            android:gravity="center_horizontal"
+
+            android:padding="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="20dp"
+            android:text="Username"
+
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="11dp">
+
+        <TextView
+            android:id="@+id/carIdView"
+            android:layout_width="159dp"
+            android:layout_height="wrap_content"
+
+            android:text="Car ID"
+
+            android:layout_gravity="center"
+
+            android:layout_marginBottom="11dp"
+            android:background="@color/white"
+
+            android:gravity="center_horizontal"
+            android:padding="10dp"
+            android:paddingRight="10dp"
+
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/startDateView"
+            android:layout_width="159dp"
+            android:layout_height="wrap_content"
+
+            android:text="Start Date"
+            android:layout_marginStart="15dp"
+
+            android:layout_gravity="center"
+
+            android:layout_marginBottom="11dp"
+            android:background="@color/white"
+
+            android:gravity="center_horizontal"
+            android:padding="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="11dp">
+
+        <TextView
+            android:id="@+id/endDateView"
+            android:layout_width="159dp"
+            android:layout_height="wrap_content"
+
+            android:text="End Date"
+
+
+            android:layout_gravity="center"
+
+            android:layout_marginBottom="11dp"
+            android:background="@color/white"
+
+            android:gravity="center_horizontal"
+            android:padding="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/priceView"
+            android:layout_width="159dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Price"
+
+            android:layout_marginBottom="11dp"
+            android:background="@color/white"
+            android:layout_marginStart="15dp"
+            android:gravity="center_horizontal"
+            android:padding="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="11dp">
+
+        <TextView
+            android:id="@+id/paymentStatusView"
+            android:layout_width="159dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            android:text="Status"
+
+
+            android:layout_marginBottom="11dp"
+            android:background="@color/white"
+
+            android:gravity="center_horizontal"
+            android:padding="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"  />
+
+        <TextView
+            android:id="@+id/visaIdView"
+            android:layout_width="159dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Visa ID"
+
+            android:layout_marginBottom="11dp"
+            android:background="@color/white"
+            android:layout_marginStart="15dp"
+            android:gravity="center_horizontal"
+            android:padding="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"  />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/daynumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="11dp"
+
+        android:background="@color/white"
+        android:gravity="center_horizontal"
+
+        android:padding="10dp"
+        android:paddingLeft="10dp"
+        android:text="Number of Days to Booking"
+
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="11dp">
+        <Button
+            android:id="@+id/approvedButton"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Approv request"
+            android:background="#49228E"
+            android:textSize="24sp"
+
+            android:textStyle="bold" />
+
+
+        <Button
+            android:id="@+id/disapprovedButton"
+            android:layout_width="155dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="dis Approved"
+            android:layout_marginStart="15dp"
+            android:background="#49228E"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</LinearLayout>

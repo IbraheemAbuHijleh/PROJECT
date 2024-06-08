@@ -86,7 +86,7 @@ import java.time.temporal.ChronoUnit;public class ManagerDetailsApprover extends
                                 String price = obj.getString("price");
                                 String status = obj.getString("paymentstatus");
                                 String visa = obj.getString("visaid");
-
+                                updatcarstatus(carid);
                                 usernameView.setText("Username \n"+username);
                                 carIdView.setText("Car Id \n"+carid);
                                 startDateView.setText("Start date \n"+startdate);
@@ -211,5 +211,28 @@ import java.time.temporal.ChronoUnit;public class ManagerDetailsApprover extends
 
         queue.add(request);
     }
+    private void updatcarstatus(String id) {
+        String url = "http://10.0.2.2:80/CARRENTAL/carstatusapproved.php?carid=" + id;
+        Log.d("volley_debug", "Request URL: " + url);
 
+        JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        try {
+                            JSONObject obj = response.getJSONObject(0);
+
+                        } catch (JSONException exception) {
+                            Log.d("volley_error", "JSON parsing error: " + exception.toString());
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.d("volley_error", "Volley error: " + error.toString());
+            }
+        });
+
+        queue.add(request);
+    }
 }
