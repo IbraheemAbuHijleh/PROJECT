@@ -55,10 +55,50 @@ public class Queries extends AppCompatActivity {
        makeRequest(URL_NOT_AVAILABLE_CARS,2);
 
         // Request for profit
-        makeRequest(URL_PROFIT,3);
+        makeRequestpROFIT(URL_PROFIT);
 
         makeRequest(URL_PROFIT_I,4);
 
+    }
+
+    private void makeRequestpROFIT(String urlProfit) {
+
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, urlProfit,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.d("Response", response);
+
+                        try {
+                            JSONObject o = new JSONObject(response);
+
+                            // Check if the response contains "total_profit"
+                            if (o.has("total_profit")) {
+                                float totalProfit = (float) o.getDouble("total_profit");
+                                Log.d("Float", String.valueOf(totalProfit));
+                                txt3.setText(String.valueOf(totalProfit));
+                            }
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            Log.e("JSONError", "Response parsing error");
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        if (error.networkResponse != null) {
+                            Log.e("Volley", "Error: " + new String(error.networkResponse.data));
+                        } else {
+                            Log.e("Volley", "Error: " + error.toString());
+                        }
+                        Toast.makeText(getApplicationContext(), "Request error", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+
+        queue.add(stringRequest);
     }
 
     private void makeRequest(String url,int i) {
@@ -83,9 +123,7 @@ public class Queries extends AppCompatActivity {
 
                                     txt2.setText(message);
 
-                                } else if (i==3) {
-                                    txt3.setText(message);
-                              }
+                                }
                                 if(i==4){
 
                                     txt4.setText(message);

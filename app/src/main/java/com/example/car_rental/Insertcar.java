@@ -95,12 +95,12 @@ public class Insertcar extends AppCompatActivity {
     }
 
     private boolean checkdata() {
-        String CARID = editText1.getText().toString().trim();
-        String BRAND = getEditText2.getText().toString().trim();
-        String COLOR = getEditText3.getText().toString().trim();
-        String MODEL = getEditText4.getText().toString().trim();
-        String PRICE = getEditText5.getText().toString().trim();
-        String SEATS = spinner.getSelectedItem().toString();
+        String CARID = editText1.getText().toString().trim().toLowerCase();
+        String BRAND = getEditText2.getText().toString().trim().toLowerCase();
+        String COLOR = getEditText3.getText().toString().trim().toLowerCase();
+        String MODEL = getEditText4.getText().toString().trim().toLowerCase();
+        String PRICE = getEditText5.getText().toString().trim().toLowerCase();
+        String SEATS = spinner.getSelectedItem().toString().toLowerCase();
         int id = radio.getCheckedRadioButtonId();
 
         int day = cal.getDayOfMonth();
@@ -213,8 +213,7 @@ public class Insertcar extends AppCompatActivity {
         String URL = "http://10.0.2.2:80/CARRENTAL/INSERT.php";
         int id = radio.getCheckedRadioButtonId();
         RadioButton rdo = findViewById(id);
-        String STAT = rdo.getText().toString().trim();
-        Log.d("TTTT", STAT);
+        String STAT = rdo.getText().toString().trim().toLowerCase();
 
         StringRequest R = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
@@ -237,28 +236,27 @@ public class Insertcar extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.e("Volley", "Error: " + error.toString());
-                Toast.makeText(Insertcar.this, "Request error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Insertcar.this, "Request error: " + error.toString(), Toast.LENGTH_SHORT).show();
             }
         }) {
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<>();
                 params.put("carid", editText1.getText().toString().trim().toLowerCase());
-                params.put("brand", getEditText2.getText().toString().trim());
-                params.put("color", getEditText3.getText().toString().trim());
-                params.put("MODEL", getEditText4.getText().toString().trim());
-                params.put("PRICE", getEditText5.getText().toString().trim());
-                params.put("SEAT", spinner.getSelectedItem().toString());
-                params.put("STATUS", STAT);
+                params.put("brand", getEditText2.getText().toString().trim().toLowerCase());
+                params.put("color", getEditText3.getText().toString().trim().toLowerCase());
+                params.put("MODEL", getEditText4.getText().toString().trim().toLowerCase());
+                params.put("PRICE", getEditText5.getText().toString().trim().toLowerCase());
+                params.put("SEAT", spinner.getSelectedItem().toString().toLowerCase());
+                params.put("STATUS", STAT.toLowerCase());
 
                 int day = cal.getDayOfMonth();
                 int month = cal.getMonth() + 1;
                 int year = cal.getYear();
                 String date = year + "-" + month + "-" + day;
-                Log.d("DATA", date);
-                params.put("DATA", date);
+                params.put("DATA", date.toLowerCase());
 
-                params.put("chapterlocation", getEditText6.getText().toString().trim());
+                params.put("chapterlocation", getEditText6.getText().toString().trim().toLowerCase());
 
                 return params;
             }
@@ -267,29 +265,30 @@ public class Insertcar extends AppCompatActivity {
         q.add(R);
     }
 
+
     @Override
     protected void onStop() {
         super.onStop();
         if (CHECK) {
             editor.putString("CARID", editText1.getText().toString().trim().toLowerCase());
-            editor.putString("BRAND", getEditText2.getText().toString().trim());
-            editor.putString("COLOR", getEditText3.getText().toString().trim());
-            editor.putString("MODEL", getEditText4.getText().toString().trim());
-            editor.putString("PRICE", getEditText5.getText().toString().trim());
-            editor.putString("SEAT", spinner.getSelectedItem().toString());
+            editor.putString("BRAND", getEditText2.getText().toString().trim().toLowerCase());
+            editor.putString("COLOR", getEditText3.getText().toString().trim().toLowerCase());
+            editor.putString("MODEL", getEditText4.getText().toString().trim().toLowerCase());
+            editor.putString("PRICE", getEditText5.getText().toString().trim().toLowerCase());
+            editor.putString("SEAT", spinner.getSelectedItem().toString().toLowerCase());
 
             int day = cal.getDayOfMonth();
             int month = cal.getMonth() + 1;
             int year = cal.getYear();
             String date = year + "-" + month + "-" + day;
-            editor.putString("DATE", date);
+            editor.putString("DATE", date.toLowerCase());
 
             int id = radio.getCheckedRadioButtonId();
             RadioButton rdo = findViewById(id);
-            String STAT = rdo.getText().toString().trim();
-            editor.putString("ID", STAT);
+            String STAT = rdo.getText().toString().trim().toLowerCase();
+            editor.putString("ID", STAT.toLowerCase());
 
-            editor.putString("chapterlocation", getEditText6.getText().toString().trim());
+            editor.putString("chapterlocation", getEditText6.getText().toString().trim().toLowerCase());
             editor.commit();
         }
     }
@@ -298,23 +297,23 @@ public class Insertcar extends AppCompatActivity {
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putString("CARID", editText1.getText().toString().trim().toLowerCase());
-        outState.putString("BRAND", getEditText2.getText().toString().trim());
-        outState.putString("COLOR", getEditText3.getText().toString().trim());
-        outState.putString("MODEL", getEditText4.getText().toString().trim());
-        outState.putString("PRICE", getEditText5.getText().toString().trim());
-        outState.putString("SEAT", spinner.getSelectedItem().toString());
+        outState.putString("BRAND", getEditText2.getText().toString().trim().toLowerCase());
+        outState.putString("COLOR", getEditText3.getText().toString().trim().toLowerCase());
+        outState.putString("MODEL", getEditText4.getText().toString().trim().toLowerCase());
+        outState.putString("PRICE", getEditText5.getText().toString().trim().toLowerCase());
+        outState.putString("SEAT", spinner.getSelectedItem().toString().toLowerCase());
 
         int day = cal.getDayOfMonth();
         int month = cal.getMonth() + 1;
         int year = cal.getYear();
         String date = year + "-" + month + "-" + day;
-        outState.putString("DATE", date);
+        outState.putString("DATE", date.toLowerCase());
 
         int id = radio.getCheckedRadioButtonId();
         RadioButton rdo = findViewById(id);
-        String STAT = rdo.getText().toString().trim();
-        outState.putString("ID", STAT);
+        String STAT = rdo.getText().toString().trim().toLowerCase();
+        outState.putString("ID", STAT.toLowerCase());
 
-        outState.putString("chapterlocation", getEditText6.getText().toString().trim());
+        outState.putString("chapterlocation", getEditText6.getText().toString().trim().toLowerCase());
     }
 }

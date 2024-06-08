@@ -22,7 +22,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:fontFamily="sans-serif-medium"
-            android:text="Insert Car"
+            android:text="Update Car"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textSize="30sp" />
@@ -135,7 +135,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="Available"
+                android:text="available"
                 android:textColor="#534E5C"
                 android:textSize="20dp" />
 
@@ -145,7 +145,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="Not Available"
+                android:text="not available"
                 android:textColor="#534E5C"
                 android:textSize="20dp" />
 
@@ -159,7 +159,7 @@
             android:layout_marginTop="20dp"
             android:backgroundTint="#a981e5"
             android:onClick="clickbait"
-            android:text="Add Car"
+            android:text="Update"
             android:textColor="#FFFFFF"
             android:textSize="20dp"
            />

@@ -91,7 +91,7 @@ public class UPDATE extends AppCompatActivity {
 
                     list.setVisibility(View.VISIBLE);
 
-                    String CARIDD = edttext.getText().toString();
+                    String CARIDD = edttext.getText().toString().toLowerCase();
 
                     String URL = "http://10.0.2.2:80/CARRENTAL/GetCarId.php?carid=" + CARIDD;
 
@@ -133,15 +133,15 @@ public class UPDATE extends AppCompatActivity {
                                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                                                 Intent intent = new Intent(UPDATE.this, UPDATING.class);
-                                                intent.putExtra("CARID",CARID); ;
-                                                intent.putExtra("BRAND",BRAND);
-                                                intent.putExtra("COLOR",COLOR);
-                                                intent.putExtra("MODEL",MODEL);
-                                                intent.putExtra("PRICE", PRICE);
-                                                intent.putExtra("SEAT", SEAT);
-                                                intent.putExtra("STATUS", STATUS);
-                                                intent.putExtra("InsuranceExpiry", DATE);
-                                                intent.putExtra("chapterlocation", LOCATION);
+                                                intent.putExtra("CARID",CARID.toLowerCase()); ;
+                                                intent.putExtra("BRAND",BRAND.toLowerCase());
+                                                intent.putExtra("COLOR",COLOR.toLowerCase());
+                                                intent.putExtra("MODEL",MODEL.toLowerCase());
+                                                intent.putExtra("PRICE", PRICE.toLowerCase());
+                                                intent.putExtra("SEAT", SEAT.toLowerCase());
+                                                intent.putExtra("STATUS", STATUS.toLowerCase());
+                                                intent.putExtra("InsuranceExpiry", DATE.toLowerCase());
+                                                intent.putExtra("chapterlocation", LOCATION.toLowerCase());
                                                 startActivity(intent);
 
                                         }

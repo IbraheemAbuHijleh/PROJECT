@@ -89,9 +89,9 @@ public class UPDATING extends AppCompatActivity {
 
         setSpinnerSelection(spinner, SEATD);
 
-        if ("Available".equals(STATUSD)) {
+        if ("available".equals(STATUSD)) {
             ((RadioButton) findViewById(R.id.RV1)).setChecked(true);
-        } else if ("Not Available".equals(STATUSD)) {
+        } else if ("not available".equals(STATUSD)) {
             ((RadioButton) findViewById(R.id.RNV)).setChecked(true);
         }
 
@@ -119,12 +119,12 @@ public class UPDATING extends AppCompatActivity {
 
     private boolean checkdata() {
 
-        String CARID = editText1.getText().toString().trim();
-        String BRAND = editText2.getText().toString().trim();
-        String COLOR = editText3.getText().toString().trim();
-        String MODEL = editText4.getText().toString().trim();
-        String PRICE = editText5.getText().toString().trim();
-        String SEATS = spinner.getSelectedItem().toString();
+        String CARID = editText1.getText().toString().trim().toLowerCase();
+        String BRAND = editText2.getText().toString().trim().toLowerCase();
+        String COLOR = editText3.getText().toString().trim().toLowerCase();
+        String MODEL = editText4.getText().toString().trim().toLowerCase();
+        String PRICE = editText5.getText().toString().trim().toLowerCase();
+        String SEATS = spinner.getSelectedItem().toString().toLowerCase();
         int id = radio.getCheckedRadioButtonId();
 
         // Retrieving the date from DatePicker
@@ -161,7 +161,6 @@ public class UPDATING extends AppCompatActivity {
     }
 
     public void clickbait(View view) {
-
         if (!checkdata()) return; // Prevent further execution if data is invalid
 
         String URL = "http://10.0.2.2:80/CARRENTAL/UPDATE.php";
@@ -173,7 +172,6 @@ public class UPDATING extends AppCompatActivity {
         String STAT = rdo.getText().toString().trim();
 
         StringRequest R = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
-
             @Override
             public void onResponse(String response) {
                 Log.d("Response", response);
@@ -193,35 +191,35 @@ public class UPDATING extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.e("Volley", "Error: " + error.toString());
+                if (error.networkResponse != null) {
+                    Log.e("Volley", "Error: " + new String(error.networkResponse.data));
+                } else {
+                    Log.e("Volley", "Error: " + error.toString());
+                }
                 Toast.makeText(UPDATING.this, "Request error", Toast.LENGTH_SHORT).show();
             }
         }) {
             @Override
             protected Map<String, String> getParams() {
-
                 Map<String, String> params = new HashMap<>();
 
                 params.put("carid", editText1.getText().toString().trim().toLowerCase());
+                params.put("brand", editText2.getText().toString().trim().toLowerCase());
+                params.put("color", editText3.getText().toString().trim().toLowerCase());
+                params.put("MODEL", editText4.getText().toString().trim().toLowerCase());
+                params.put("PRICE", editText5.getText().toString().trim().toLowerCase());
+                params.put("SEAT", spinner.getSelectedItem().toString().toLowerCase());
+                params.put("STATUS", STAT.toLowerCase());
 
-                params.put("brand", editText2.getText().toString().trim());
-
-                params.put("color", editText3.getText().toString().trim());
-
-                params.put("MODEL", editText4.getText().toString().trim());
-
-                params.put("PRICE", editText5.getText().toString().trim());
-
-                params.put("SEAT", spinner.getSelectedItem().toString());
-
-                params.put("STATUS", STAT);
                 int day = cal.getDayOfMonth();
                 int month = cal.getMonth() + 1; // Month is 0-based in DatePicker
                 int year = cal.getYear();
                 String date = year + "-" + month + "-" + day;
-                Log.d("DATA", date);
-                params.put("DATA", date);
-                params.put("chapterlocation", editText6.getText().toString().trim());
+                params.put("DATA", date.toLowerCase());
+                params.put("chapterlocation", editText6.getText().toString().trim().toLowerCase());
+
+                // Log the parameters
+                Log.d("Params", params.toString());
 
                 return params;
             }
@@ -235,23 +233,23 @@ public class UPDATING extends AppCompatActivity {
         super.onStop();
         if (CHECK) {
             editor.putString("CARID", editText1.getText().toString().trim().toLowerCase());
-            editor.putString("BRAND", editText2.getText().toString().trim());
-            editor.putString("COLOR", editText3.getText().toString().trim());
-            editor.putString("MODEL", editText4.getText().toString().trim());
-            editor.putString("PRICE", editText5.getText().toString().trim());
-            editor.putString("SEAT", spinner.getSelectedItem().toString());
+            editor.putString("BRAND", editText2.getText().toString().trim().toLowerCase());
+            editor.putString("COLOR", editText3.getText().toString().trim().toLowerCase());
+            editor.putString("MODEL", editText4.getText().toString().trim().toLowerCase());
+            editor.putString("PRICE", editText5.getText().toString().trim().toLowerCase());
+            editor.putString("SEAT", spinner.getSelectedItem().toString().toLowerCase());
 
             int day = cal.getDayOfMonth();
             int month = cal.getMonth() + 1; // Month is 0-based in DatePicker
             int year = cal.getYear();
             String date = year + "-" + month + "-" + day;
-            editor.putString("DATE", date);
+            editor.putString("DATE", date.toLowerCase());
 
             int id = radio.getCheckedRadioButtonId();
             RadioButton rdo = findViewById(id);
             String STAT = rdo.getText().toString().trim();
-            editor.putString("ID", STAT);
-            editor.putString("chapterlocation", editText6.getText().toString().trim());
+            editor.putString("ID", STAT.toLowerCase());
+            editor.putString("chapterlocation", editText6.getText().toString().trim().toLowerCase());
 
             editor.commit();
         }
@@ -261,23 +259,23 @@ public class UPDATING extends AppCompatActivity {
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putString("CARID", editText1.getText().toString().trim().toLowerCase());
-        outState.putString("BRAND", editText2.getText().toString().trim());
-        outState.putString("COLOR", editText3.getText().toString().trim());
-        outState.putString("MODEL", editText4.getText().toString().trim());
-        outState.putString("PRICE", editText5.getText().toString().trim());
-        outState.putString("SEAT", spinner.getSelectedItem().toString());
+        outState.putString("BRAND", editText2.getText().toString().trim().toLowerCase());
+        outState.putString("COLOR", editText3.getText().toString().trim().toLowerCase());
+        outState.putString("MODEL", editText4.getText().toString().trim().toLowerCase());
+        outState.putString("PRICE", editText5.getText().toString().trim().toLowerCase());
+        outState.putString("SEAT", spinner.getSelectedItem().toString().toLowerCase());
 
         // Retrieving the date from DatePicker
         int day = cal.getDayOfMonth();
         int month = cal.getMonth() + 1; // Month is 0-based in DatePicker
         int year = cal.getYear();
         String date = year + "-" + month + "-" + day;
-        outState.putString("DATE", date);
+        outState.putString("DATE", date.toLowerCase());
 
         int id = radio.getCheckedRadioButtonId();
         RadioButton rdo = findViewById(id);
         String STAT = rdo.getText().toString().trim();
-        outState.putString("ID", STAT);
-        outState.putString("chapterlocation", editText6.getText().toString().trim());
+        outState.putString("ID", STAT.toLowerCase());
+        outState.putString("chapterlocation", editText6.getText().toString().trim().toLowerCase());
     }
 }
