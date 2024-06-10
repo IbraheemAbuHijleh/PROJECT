@@ -13,9 +13,9 @@
         android:background="@color/Purple"
         android:orientation="vertical"
         android:padding="16dp"
-        android:layout_margin="10dp">
+        >
 
-        <!-- Table for Monthly and Yearly Profits -->
+
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -24,7 +24,7 @@
             android:stretchColumns="1"
             android:layout_marginTop="50dp">
 
-            <!-- Header Row -->
+
             <TableRow>
 
                 <TextView
@@ -96,11 +96,12 @@
             android:id="@+id/chart_image"
             android:layout_width="match_parent"
             android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="16dp"
             android:contentDescription="Sales Chart"
             android:scaleType="fitCenter"
-            android:src="@drawable/sample_charts"
-            android:layout_marginTop="20dp"/>
+            android:src="@drawable/sample_charts" />
 
 
         <Button
