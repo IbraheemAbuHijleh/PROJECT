@@ -27,7 +27,7 @@ public class Queries extends AppCompatActivity {
     private TextView txt3;
     private TextView txt4;
     private RequestQueue queue;
-
+    private    String URL_PROFIT_I="http://10.0.2.2:80/CARRENTAL/NumberOfCarsEndDateIns.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -46,7 +46,7 @@ public class Queries extends AppCompatActivity {
         String URL_AVAILABLE_CARS = "http://10.0.2.2:80/CARRENTAL/NumberCarAvailable.php";
         String URL_NOT_AVAILABLE_CARS = "http://10.0.2.2:80/CARRENTAL/NotAvailbale.php";
         String URL_PROFIT = "http://10.0.2.2:80/CARRENTAL/Profet.php";
-        String URL_PROFIT_I="http://10.0.2.2:80/CARRENTAL/NumberOfCarsEndDateIns.php";
+
 
         // Request for available cars
        makeRequest(URL_AVAILABLE_CARS,1);
@@ -155,5 +155,11 @@ public class Queries extends AppCompatActivity {
         Intent I=new Intent(Queries.this,Result.class);
         startActivity(I);
 
+    }
+
+
+    protected void onResume(){
+        super.onResume();
+        makeRequest(URL_PROFIT_I,4);
     }
 }

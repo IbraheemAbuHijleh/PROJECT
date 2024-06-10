@@ -226,6 +226,10 @@ public class UPDATING extends AppCompatActivity {
         };
 
         q.add(R);
+
+        Intent returnIntent = new Intent();
+        setResult(RESULT_OK, returnIntent);
+        finish();
     }
 
     @Override
