@@ -192,7 +192,7 @@ public class UPDATING extends AppCompatActivity {
                         Toast.makeText(UPDATING.this, "Key 'message' not found in response", Toast.LENGTH_SHORT).show();
                     }
                     saveData();
-                    finish(); // Finish the activity after updating the data
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                     Toast.makeText(UPDATING.this, "Response parsing error", Toast.LENGTH_SHORT).show();

@@ -77,6 +77,7 @@ public class Result extends AppCompatActivity {
                     public void onResponse(JSONArray response) {
                         if (response != null && response.length() > 0) {
                             ArrayList<Car> list1 = new ArrayList<>();
+
                             list1.clear();
                             try {
                                 for (int i = 0; i < response.length(); i++) {
@@ -98,7 +99,7 @@ public class Result extends AppCompatActivity {
                                     @Override
                                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                         Car car = (Car) parent.getItemAtPosition(position);
-                                        Intent intent = new Intent(Result.this, UPDATING.class);
+                                        Intent intent = new Intent(Result.this,UPDATEINSURANCE.class);
                                         intent.putExtra("CARID", car.getCarID().toLowerCase());
                                         intent.putExtra("BRAND", car.getBrand().toLowerCase());
                                         intent.putExtra("COLOR", car.getColor().toLowerCase());
@@ -131,9 +132,8 @@ public class Result extends AppCompatActivity {
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-        // تحديث البيانات من SharedPreferences وعرضها في ListView
+    protected void onRestart() {
+        super.onRestart();
         updateListView();
     }
 
