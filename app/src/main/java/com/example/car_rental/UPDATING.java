@@ -31,14 +31,52 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+// UPDATING Activity
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Spinner;
+import android.widget.Toast;
+
+// UPDATING Activity
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Spinner;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class UPDATING extends AppCompatActivity {
 
-    private EditText editText1;
-    private EditText editText2;
-    private EditText editText3;
-    private EditText editText4;
-    private EditText editText5;
-    private EditText editText6;
+    private EditText editText1, editText2, editText3, editText4, editText5, editText6;
     private Spinner spinner;
     private DatePicker cal;
     private RadioGroup radio;
@@ -47,64 +85,62 @@ public class UPDATING extends AppCompatActivity {
 
     private SharedPreferences preferences;
     private SharedPreferences.Editor editor;
-    private boolean CHECK = false;
-
-    private String CARIDD = "";
-    private String BRANDD = "";
-    private String COLORD = "";
-    private String MODELD = "";
-    private String PRICED = "";
-    private String SEATD = "";
-    private String DATED = "";
-    private String LOCATIOND = "";
-    private String STATUSD = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_updating);
 
         Intent i = getIntent();
-
         HOKS();
 
-        CARIDD = i.getStringExtra("CARID");
-        BRANDD = i.getStringExtra("BRAND");
-        COLORD = i.getStringExtra("COLOR");
-        MODELD = i.getStringExtra("MODEL");
-        PRICED = i.getStringExtra("PRICE");
-        SEATD = i.getStringExtra("SEAT");
-        STATUSD = i.getStringExtra("STATUS");
-        DATED = i.getStringExtra("InsuranceExpiry");
-        LOCATIOND = i.getStringExtra("chapterlocation");
+        // Set data from intent to UI components
+        editText1.setText(i.getStringExtra("CARID"));
+        editText2.setText(i.getStringExtra("BRAND"));
+        editText3.setText(i.getStringExtra("COLOR"));
+        editText4.setText(i.getStringExtra("MODEL"));
+        editText5.setText(i.getStringExtra("PRICE"));
+        editText6.setText(i.getStringExtra("chapterlocation"));
+        setSpinnerSelection(spinner, i.getStringExtra("SEAT"));
 
-        // Set data to UI components
-        editText1.setText(CARIDD);
-        editText2.setText(BRANDD);
-        editText3.setText(COLORD);
-        editText4.setText(MODELD);
-        editText5.setText(PRICED);
-        editText6.setText(LOCATIOND);
-
-        setSpinnerSelection(spinner, SEATD);
-
-        if ("available".equals(STATUSD)) {
+        String status = i.getStringExtra("STATUS");
+        if ("available".equals(status)) {
             ((RadioButton) findViewById(R.id.RV1)).setChecked(true);
-        } else if ("not available".equals(STATUSD)) {
+        } else if ("not available".equals(status)) {
             ((RadioButton) findViewById(R.id.RNV)).setChecked(true);
         }
 
-        if (DATED != null) {
-            String[] dateParts = DATED.split("-");
+        String date = i.getStringExtra("InsuranceExpiry");
+        if (date != null) {
+            String[] dateParts = date.split("-");
             int year = Integer.parseInt(dateParts[0]);
-            int month = Integer.parseInt(dateParts[1]) - 1; // Month is 0-based in DatePicker
+            int month = Integer.parseInt(dateParts[1]) - 1;
             int day = Integer.parseInt(dateParts[2]);
             cal.updateDate(year, month, day);
         }
-        setupS();
 
-        CHECK = checkdata();
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (checkdata()) {
+                    updateCarData();
+                }
+            }
+        });
+    }
+
+    private void HOKS() {
+        editText1 = findViewById(R.id.edtt1);
+        editText2 = findViewById(R.id.edttext2);
+        editText3 = findViewById(R.id.edttext3);
+        editText4 = findViewById(R.id.edttext4);
+        editText5 = findViewById(R.id.edttext5);
+        editText6 = findViewById(R.id.edttext6);
+        spinner = findViewById(R.id.sp);
+        cal = findViewById(R.id.cv);
+        btn = findViewById(R.id.btn);
+        radio = findViewById(R.id.radiogroub);
+        q = Volley.newRequestQueue(this);
     }
 
     private void setSpinnerSelection(Spinner spinner, String value) {
@@ -118,7 +154,6 @@ public class UPDATING extends AppCompatActivity {
     }
 
     private boolean checkdata() {
-
         String CARID = editText1.getText().toString().trim().toLowerCase();
         String BRAND = editText2.getText().toString().trim().toLowerCase();
         String COLOR = editText3.getText().toString().trim().toLowerCase();
@@ -141,35 +176,8 @@ public class UPDATING extends AppCompatActivity {
         return true;
     }
 
-    private void setupS() {
-        preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        editor = preferences.edit();
-    }
-
-    private void HOKS() {
-        editText1 = findViewById(R.id.edtt1);
-        editText2 = findViewById(R.id.edttext2);
-        editText3 = findViewById(R.id.edttext3);
-        editText4 = findViewById(R.id.edttext4);
-        editText5 = findViewById(R.id.edttext5);
-        editText6 = findViewById(R.id.edttext6);
-        spinner = findViewById(R.id.sp);
-        cal = findViewById(R.id.cv); // Ensure this ID is a DatePicker in your XML layout
-        btn = findViewById(R.id.btn);
-        radio = findViewById(R.id.radiogroub);
-        q = Volley.newRequestQueue(this);
-    }
-
-    public void clickbait(View view) {
-        if (!checkdata()) return; // Prevent further execution if data is invalid
-
+    private void updateCarData() {
         String URL = "http://10.0.2.2:80/CARRENTAL/UPDATE.php";
-
-        int id = radio.getCheckedRadioButtonId();
-
-        RadioButton rdo = findViewById(id);
-
-        String STAT = rdo.getText().toString().trim();
 
         StringRequest R = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
@@ -183,6 +191,8 @@ public class UPDATING extends AppCompatActivity {
                     } else {
                         Toast.makeText(UPDATING.this, "Key 'message' not found in response", Toast.LENGTH_SHORT).show();
                     }
+                    saveData();
+                    finish(); // Finish the activity after updating the data
                 } catch (JSONException e) {
                     e.printStackTrace();
                     Toast.makeText(UPDATING.this, "Response parsing error", Toast.LENGTH_SHORT).show();
@@ -202,84 +212,54 @@ public class UPDATING extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<>();
-
                 params.put("carid", editText1.getText().toString().trim().toLowerCase());
                 params.put("brand", editText2.getText().toString().trim().toLowerCase());
                 params.put("color", editText3.getText().toString().trim().toLowerCase());
                 params.put("MODEL", editText4.getText().toString().trim().toLowerCase());
                 params.put("PRICE", editText5.getText().toString().trim().toLowerCase());
                 params.put("SEAT", spinner.getSelectedItem().toString().toLowerCase());
-                params.put("STATUS", STAT.toLowerCase());
 
                 int day = cal.getDayOfMonth();
                 int month = cal.getMonth() + 1; // Month is 0-based in DatePicker
                 int year = cal.getYear();
                 String date = year + "-" + month + "-" + day;
                 params.put("DATA", date.toLowerCase());
-                params.put("chapterlocation", editText6.getText().toString().trim().toLowerCase());
 
-                // Log the parameters
-                Log.d("Params", params.toString());
+                int id = radio.getCheckedRadioButtonId();
+                RadioButton rdo = findViewById(id);
+                String STAT = rdo.getText().toString().trim();
+                params.put("STATUS", STAT.toLowerCase());
+                params.put("chapterlocation", editText6.getText().toString().trim().toLowerCase());
 
                 return params;
             }
         };
 
         q.add(R);
-
-        Intent returnIntent = new Intent();
-        setResult(RESULT_OK, returnIntent);
-        finish();
     }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        if (CHECK) {
-            editor.putString("CARID", editText1.getText().toString().trim().toLowerCase());
-            editor.putString("BRAND", editText2.getText().toString().trim().toLowerCase());
-            editor.putString("COLOR", editText3.getText().toString().trim().toLowerCase());
-            editor.putString("MODEL", editText4.getText().toString().trim().toLowerCase());
-            editor.putString("PRICE", editText5.getText().toString().trim().toLowerCase());
-            editor.putString("SEAT", spinner.getSelectedItem().toString().toLowerCase());
+    private void saveData() {
+        SharedPreferences sharedPreferences = getSharedPreferences("CarData", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
 
-            int day = cal.getDayOfMonth();
-            int month = cal.getMonth() + 1; // Month is 0-based in DatePicker
-            int year = cal.getYear();
-            String date = year + "-" + month + "-" + day;
-            editor.putString("DATE", date.toLowerCase());
+        editor.putString("CARID", editText1.getText().toString().trim().toLowerCase());
+        editor.putString("BRAND", editText2.getText().toString().trim().toLowerCase());
+        editor.putString("COLOR", editText3.getText().toString().trim().toLowerCase());
+        editor.putString("MODEL", editText4.getText().toString().trim().toLowerCase());
+        editor.putString("PRICE", editText5.getText().toString().trim().toLowerCase());
+        editor.putString("SEAT", spinner.getSelectedItem().toString().toLowerCase());
 
-            int id = radio.getCheckedRadioButtonId();
-            RadioButton rdo = findViewById(id);
-            String STAT = rdo.getText().toString().trim();
-            editor.putString("ID", STAT.toLowerCase());
-            editor.putString("chapterlocation", editText6.getText().toString().trim().toLowerCase());
-
-            editor.commit();
-        }
-    }
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        outState.putString("CARID", editText1.getText().toString().trim().toLowerCase());
-        outState.putString("BRAND", editText2.getText().toString().trim().toLowerCase());
-        outState.putString("COLOR", editText3.getText().toString().trim().toLowerCase());
-        outState.putString("MODEL", editText4.getText().toString().trim().toLowerCase());
-        outState.putString("PRICE", editText5.getText().toString().trim().toLowerCase());
-        outState.putString("SEAT", spinner.getSelectedItem().toString().toLowerCase());
-
-        // Retrieving the date from DatePicker
         int day = cal.getDayOfMonth();
         int month = cal.getMonth() + 1; // Month is 0-based in DatePicker
         int year = cal.getYear();
         String date = year + "-" + month + "-" + day;
-        outState.putString("DATE", date.toLowerCase());
+        editor.putString("DATE", date.toLowerCase());
 
         int id = radio.getCheckedRadioButtonId();
         RadioButton rdo = findViewById(id);
-        String STAT = rdo.getText().toString().trim();
-        outState.putString("ID", STAT.toLowerCase());
-        outState.putString("chapterlocation", editText6.getText().toString().trim().toLowerCase());
+        editor.putString("STATUS", rdo.getText().toString().trim().toLowerCase());
+        editor.putString("LOCATION", editText6.getText().toString().trim().toLowerCase());
+
+        editor.apply();
     }
 }
