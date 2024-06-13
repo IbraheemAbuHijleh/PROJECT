@@ -160,4 +160,9 @@ public class Result extends AppCompatActivity {
             GETDATA(); // If no updated data in SharedPreferences, fetch data from the server
         }
     }
+
+    public void  onStop(){
+        super.onStop();
+        finish();
+    }
 }

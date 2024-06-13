@@ -219,6 +219,11 @@ public class UPDATEINSURANCE extends AppCompatActivity{
 
             editor.commit();
         }
+
+        public void onStop(){
+            super.onStop();
+            finish();
+        }
 }
 
 
